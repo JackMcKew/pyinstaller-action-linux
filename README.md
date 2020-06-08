@@ -21,7 +21,7 @@ Include this in your `.github/workflows/main.yaml`:
 
 ```yaml
 - name: PyInstaller Linux
-  uses: JackMcKew/pyinstaller-action-linux@master
+  uses: JackMcKew/pyinstaller-action-linux@main
     with:
       path: src
 ```
@@ -39,9 +39,9 @@ name: Package Application with Pyinstaller
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -52,7 +52,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Package Application
-      uses: JackMcKew/pyinstaller-action-linux@master
+      uses: JackMcKew/pyinstaller-action-linux@main
       with:
         path: src
 
