@@ -17,8 +17,6 @@ PYPI_INDEX_URL=$3
 
 WORKDIR=${SRCDIR:-/src}
 
-apt-get install -y python3-pip
-
 #
 # In case the user specified a custom URL for PYPI, then use
 # that one, instead of the default one.
