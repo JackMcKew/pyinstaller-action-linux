@@ -17,6 +17,8 @@ PYPI_INDEX_URL=$3
 
 WORKDIR=${SRCDIR:-/src}
 
+python -m pip install --upgrade pip wheel setuptools
+
 #
 # In case the user specified a custom URL for PYPI, then use
 # that one, instead of the default one.
