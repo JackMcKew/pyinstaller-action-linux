@@ -17,6 +17,8 @@ PYPI_INDEX_URL=$3
 
 WORKDIR=${SRCDIR:-/src}
 
+sudo apt-get install python3-pip
+
 python -m pip install --upgrade pip wheel setuptools
 
 #
