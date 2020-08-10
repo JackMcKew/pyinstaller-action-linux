@@ -38,7 +38,7 @@ fi
 cd $WORKDIR
 
 if [ -f requirements.txt ]; then
-    pip install -r requirements.txt
+    python -m pip install -r requirements.txt
 fi # [ -f requirements.txt ]
 
 pyinstaller --clean -y --dist ./dist/linux --workpath /tmp *.spec
