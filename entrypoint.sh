@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Fail on errors.
-set -e
+# set -e
 
 # Make sure .bashrc is sourced
 . /root/.bashrc
@@ -40,6 +40,6 @@ cd $WORKDIR
 if [ -f requirements.txt ]; then
     /root/.pyenv/shims/pip install -r requirements.txt
 fi # [ -f requirements.txt ]
-
+echo "Installed"
 pyinstaller --clean -y --dist ./dist/linux --workpath /tmp *.spec
 chown -R --reference=. ./dist/linux
