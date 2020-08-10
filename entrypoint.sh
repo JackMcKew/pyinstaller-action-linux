@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -x
 
 # Fail on errors.
 set -e
@@ -38,7 +38,7 @@ fi
 cd $WORKDIR
 
 if [ -f requirements.txt ]; then
-    python -m pip install -r requirements.txt
+    /root/.pyenv/shims/pip install -r requirements.txt
 fi # [ -f requirements.txt ]
 
 pyinstaller --clean -y --dist ./dist/linux --workpath /tmp *.spec
