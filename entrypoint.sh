@@ -17,6 +17,10 @@ PYPI_INDEX_URL=$3
 
 WORKDIR=${SRCDIR:-/src}
 
+SPEC_FILE=${4:-*.spec}
+
+/root/.pyenv/shims/python -m pip install --upgrade pip wheel setuptools
+
 #
 # In case the user specified a custom URL for PYPI, then use
 # that one, instead of the default one.
@@ -41,8 +45,6 @@ if [ -f requirements.txt ]; then
     /root/.pyenv/shims/pip install -r requirements.txt
 fi # [ -f requirements.txt ]
 
-echo "Installed"
-
-/root/.pyenv/shims/pyinstaller --clean -y --dist ./dist/linux --workpath /tmp *.spec
+/root/.pyenv/shims/pyinstaller --clean -y --dist ./dist/linux --workpath /tmp $SPEC_FILE
 
 chown -R --reference=. ./dist/linux

@@ -1,30 +1,35 @@
 # action.yaml
-name: 'PyInstaller Linux'
-description: 'Customisable GitHub Action to package your python code with PyInstaller for Linux'
+name: "PyInstaller Linux"
+description: "Customisable GitHub Action to package your python code with PyInstaller for Linux"
 branding:
-  icon: 'box'
-  color: 'blue'
+  icon: "box"
+  color: "blue"
 inputs:
   path:
-    description: 'Directory containing source code & .spec file (optional requirements.txt).'
+    description: "Directory containing source code & .spec file (optional requirements.txt)."
     required: True
     default: src
   pypi_url:
-    description: 'Specify a custom URL for PYPI'
+    description: "Specify a custom URL for PYPI"
     required: False
     default: https://pypi.python.org/
   pypi_index_url:
-    description: 'Specify a custom URL for PYPI Index'
+    description: "Specify a custom URL for PYPI Index"
     required: False
     default: https://pypi.python.org/simple
+  spec:
+    description: "Specify a file path for .spec file"
+    required: False
+    default: ""
 outputs:
   output:
-    description: 'The output of PyInstaller'
+    description: "The output of PyInstaller"
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   args:
     - ${{ inputs.path }}
     - ${{ inputs.pypi_url }}
     - ${{ inputs.pypi_index_url }}
+    - ${{ inputs.spec }}
