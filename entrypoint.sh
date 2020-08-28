@@ -6,6 +6,12 @@
 # Make sure .bashrc is sourced
 . /root/.bashrc
 
+if $5 then
+   pyenv uninstall -f 3.7.5
+   apt-get install -y tk-dev
+   pyenv install 3.7.5
+   pyenv rehash
+
 # Allow the workdir to be set using an env var.
 # Useful for CI pipiles which use docker for their build steps
 # and don't allow that much flexibility to mount volumes
