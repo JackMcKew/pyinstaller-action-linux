@@ -4,7 +4,7 @@
 # set -im
 
 # Make sure .bashrc is sourced
-source /root/.bashrc
+. /root/.bashrc
 
 if [[ "$5" == "true" ]]; then
    /root/.pyenv/bin/pyenv uninstall -f 3.7.5
