@@ -7,10 +7,10 @@
 source /root/.bashrc
 
 if [[ "$5" == "true" ]]; then
-   pyenv uninstall -f 3.7.5
+   /root/.pyenv/bin/pyenv uninstall -f 3.7.5
    apt-get install -y tk-dev
-   pyenv install 3.7.5
-   pyenv rehash
+   /root/.pyenv/bin/pyenv install 3.7.5
+   /root/.pyenv/bin/pyenv rehash
 fi
 
 # Allow the workdir to be set using an env var.
@@ -46,16 +46,16 @@ if [[ "$PYPI_URL" != "https://pypi.python.org/" ]] || \
     cat /root/.pip/pip.conf
 fi
 
-# cd $WORKDIR
+cd $WORKDIR
 
-# if [ -f requirements.txt ]; then
-#     /root/.pyenv/shims/pip install -r requirements.txt
-# fi # [ -f requirements.txt ]
+if [ -f requirements.txt ]; then
+    /root/.pyenv/shims/pip install -r requirements.txt
+fi # [ -f requirements.txt ]
 
-# if [[ "$5" != "true" ]]; then
-#    /root/.pyenv/shims/pyinstaller --clean -y --dist ./dist/linux --workpath /tmp $SPEC_FILE
-# else
-#    /root/.pyenv/shims/pyinstaller --clean -y --hidden-import tkinter --dist ./dist/linux --workpath /tmp $SPEC_FILE
-# fi
+if [[ "$5" != "true" ]]; then
+   /root/.pyenv/shims/pyinstaller --clean -y --dist ./dist/linux --workpath /tmp $SPEC_FILE
+else
+   /root/.pyenv/shims/pyinstaller --clean -y --hidden-import tkinter --dist ./dist/linux --workpath /tmp $SPEC_FILE
+fi
 
-# chown -R --reference=. ./dist/linux
+chown -R --reference=. ./dist/linux
