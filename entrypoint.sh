@@ -6,9 +6,7 @@ set -imx
 # Make sure .bashrc is sourced
 . /root/.bashrc
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+which pyenv
 
 if [[ "$5" == "true" ]]; then
    /root/.pyenv/bin/pyenv uninstall -f 3.7.5
