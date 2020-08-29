@@ -8,7 +8,7 @@ if $5 then
    apt-get install -y tk-dev
    pyenv install 3.7.5
    pyenv rehash
-
+fi
 
 # Make sure .bashrc is sourced
 . /root/.bashrc
