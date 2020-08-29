@@ -1,7 +1,7 @@
-#!/bin/bash -ix
+#!/bin/bash -i
 
 # Fail on errors.
-set -imx
+# set -imx
 
 # Make sure .bashrc is sourced
 . /root/.bashrc
