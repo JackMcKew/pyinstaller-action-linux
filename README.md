@@ -1,6 +1,6 @@
 # PyInstaller-Action-Linux
 
-Github Action for building executables with PyInstaller
+Github Action for building executables with PyInstaller for running on Linux
 
 To build your application, you need to specify where your source code is via the `path` argument, this defaults to `src`.
 
@@ -12,6 +12,8 @@ If you wish to specify a package mirror, this is possibly via the `pypi_url` and
 
 - `pypi_url` = `https://pypi.python.org/`
 - `pypi_index_url` = `https://pypi.python.org/simple`
+
+If the application requires `Tkinter`, ensure to set the `tkinter` argument to true (this is under the `with` similar to how path is defined).
 
 > If you are using the default Python `gitignore` file, ensure to remove `.spec`
 
