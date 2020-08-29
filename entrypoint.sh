@@ -6,15 +6,6 @@ set -imx
 # Make sure .bashrc is sourced
 . /root/.bashrc
 
-which pyenv
-
-if [[ "$5" == "true" ]]; then
-   /root/.pyenv/bin/pyenv uninstall -f 3.7.5
-   apt-get install -y tk-dev
-   /root/.pyenv/bin/pyenv install 3.7.5
-   /root/.pyenv/bin/pyenv rehash
-fi
-
 # Allow the workdir to be set using an env var.
 # Useful for CI pipiles which use docker for their build steps
 # and don't allow that much flexibility to mount volumes
