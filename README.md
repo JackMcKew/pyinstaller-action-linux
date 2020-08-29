@@ -13,7 +13,7 @@ If you wish to specify a package mirror, this is possibly via the `pypi_url` and
 - `pypi_url` = `https://pypi.python.org/`
 - `pypi_index_url` = `https://pypi.python.org/simple`
 
-If the application requires `Tkinter`, ensure to set the `tkinter` argument to true (this is under the `with` similar to how path is defined).
+If the application requires `Tkinter`, ensure to use the `tkinter` branch of this repository (eg JackMcKew/pyinstaller-action-linux@tkinter), as this will undergo the steps to install `tkinter` and please set the `tkinter` argument to true (this is under the `with` similar to how path is defined). Note that this will slow the action down considerably as Python will need to be uninstalled & rebuilt once `tkinter` is installed
 
 > If you are using the default Python `gitignore` file, ensure to remove `.spec`
 
