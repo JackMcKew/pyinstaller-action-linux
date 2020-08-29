@@ -55,6 +55,7 @@ fi # [ -f requirements.txt ]
 if [[ "$5" != "true" ]]; then
    /root/.pyenv/shims/pyinstaller --clean -y --dist ./dist/linux --workpath /tmp $SPEC_FILE
 else
+   echo "Using --hidden-import tkinter with pyinstaller"
    /root/.pyenv/shims/pyinstaller --clean -y --hidden-import tkinter --dist ./dist/linux --workpath /tmp $SPEC_FILE
 fi
 
