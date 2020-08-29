@@ -3,7 +3,7 @@
 # Fail on errors.
 set -im
 
-if $5; then
+if $5 == "true"; then
    pyenv uninstall -f 3.7.5
    apt-get install -y tk-dev
    pyenv install 3.7.5
