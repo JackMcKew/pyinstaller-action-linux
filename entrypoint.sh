@@ -1,4 +1,4 @@
-#!/bin/bash -i
+#!/bin/bash -ix
 
 # Fail on errors.
 # set -im
