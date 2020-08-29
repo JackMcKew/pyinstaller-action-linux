@@ -1,7 +1,7 @@
 #!/bin/bash -i
 
 # Fail on errors.
-set -im
+# set -im
 
 if $5 == "true"; then
    pyenv uninstall -f 3.7.5
