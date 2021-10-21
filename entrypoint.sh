@@ -42,14 +42,14 @@ fi
 cd $WORKDIR
 
 
-if [$7 == "true"]
+if [$7 == "true"]; then
     sudo apt update
     sudo apt upgrade -y
     sudo apt install -y libwxbase3.0-0v5 libwxgtk-media3.0-gtk3-0v5 libwxgtk-webview3.0-gtk3-0v5 \
     libwxgtk3.0-gtk3-0v5 python3-wxgtk-media4.0 python3-wxgtk-webview4.0 python3-wxgtk4.0 \
     libgtk-3-dev 
     # /root/.pyenv/shims/pip install gooey
-fi #[$7]
+fi # [$7]
 
 if [ -f $6 ]; then
     /root/.pyenv/shims/pip install -r $6
