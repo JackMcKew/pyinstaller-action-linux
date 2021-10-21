@@ -43,8 +43,12 @@ cd $WORKDIR
 
 
 if [[ $7 == "true" ]]; then
+    echo "UPDATE PACKAGE"
     apt-get update
+    echo "UPGRADE PACKAGE"
     apt-get upgrade -y
+
+    echo "Install Gooey Dependencies"
     apt-get install -y libwxbase3.0-0v5 libwxgtk-media3.0-gtk3-0v5 libwxgtk-webview3.0-gtk3-0v5 \
     libwxgtk3.0-gtk3-0v5 python3-wxgtk-media4.0 python3-wxgtk-webview4.0 python3-wxgtk4.0 \
     libgtk-3-dev libjpeg-dev
