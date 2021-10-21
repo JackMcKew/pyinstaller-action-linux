@@ -42,7 +42,7 @@ fi
 cd $WORKDIR
 
 
-if [$7 == "true"]; then
+if [[ $7 == "true" ]]; then
     sudo apt update
     sudo apt upgrade -y
     sudo apt install -y libwxbase3.0-0v5 libwxgtk-media3.0-gtk3-0v5 libwxgtk-webview3.0-gtk3-0v5 \
