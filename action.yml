@@ -23,8 +23,16 @@ inputs:
     default: ""
   tkinter:
     description: "Specify whether to install Tkinter or not"
-    required: false
-    default: false
+    required: False
+    default: "false"
+  requirements:
+    description: 'Specify a file path for requirements.txt file'
+    required: False
+    default: "requirements.txt"
+  gooey:
+    description: "Specify whether to install Gooey or not"
+    required: False
+    default: "true"
 outputs:
   output:
     description: "The output of PyInstaller"
@@ -33,8 +41,10 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ inputs.path }}
-    - ${{ inputs.pypi_url }}
-    - ${{ inputs.pypi_index_url }}
-    - ${{ inputs.spec }}
-    - ${{ inputs.tkinter }}
+    - ${{ inputs.path }}            #$1
+    - ${{ inputs.pypi_url }}        #$2
+    - ${{ inputs.pypi_index_url }}  #$3
+    - ${{ inputs.spec }}            #$4
+    - ${{ inputs.tkinter }}         #$5
+    - ${{ inputs.requirements }}    #$6
+    - ${{ inputs.gooey }}           #$7
