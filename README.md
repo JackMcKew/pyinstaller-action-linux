@@ -64,6 +64,19 @@ jobs:
         path: src/dist/linux
 ```
 
+
+## Python 3.10
+
+If you are running into problems, please try using the branch `python3.10`:
+
+``` yaml
+- name: PyInstaller Linux
+      uses: JackMcKew/pyinstaller-action-linux@python3.10
+      with:
+        path: src
+```
+
+
 ## Sources
 
 A big thank you to all the contributors over at <https://github.com/cdrx/docker-pyinstaller>, this action is just a modified version of their docker container, thank you!
