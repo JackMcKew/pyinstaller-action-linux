@@ -33,6 +33,10 @@ inputs:
     description: "Specify whether to install Gooey or not"
     required: False
     default: "true"
+  kivy:
+    description: "Specify whether to install kivy or not"
+    required: False
+    default: "false"
 outputs:
   output:
     description: "The output of PyInstaller"
@@ -48,3 +52,4 @@ runs:
     - ${{ inputs.tkinter }}         #$5
     - ${{ inputs.requirements }}    #$6
     - ${{ inputs.gooey }}           #$7
+    - ${{ inputs.kivy }}            #$8
