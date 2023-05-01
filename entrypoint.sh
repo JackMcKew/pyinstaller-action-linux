@@ -64,6 +64,7 @@ if [[ $8 == "true" ]]; then
     echo "Install Kivy Dependencies"
     sudo apt-get install -y libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev zlib1g-dev
     sudo apt-get install -y libgstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good
+    /root/.pyenv/shims/pip install pygame
 fi # [$8]
 
 if [ -f $6 ]; then
